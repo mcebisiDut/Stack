@@ -1,7 +1,5 @@
 import java.io.Console;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 public class StackArray<T> implements IStackArray<T> {
     private T[] items;
