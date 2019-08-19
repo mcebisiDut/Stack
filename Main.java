@@ -1,9 +1,9 @@
 class Main {
-    private static final IStackArray<Integer> myStack = new StackArray<Integer>();
+    private static final IStackArray<Integer> stack = new StackArray<Integer>();
 
     public static void main(String[] args) {
         System.out.println("--------------------------------------");
-        System.out.println(myStack.isEmpty());
+        System.out.println(stack.isEmpty());
         System.out.println("--------------------------------------");
         String popped = getPoppedItem();
         System.out.println(popped);
@@ -11,34 +11,34 @@ class Main {
         String peeked = getPeekedItem();
         System.out.println(peeked);
         System.out.println("--------------------------------------");
-        myStack.push(1);
-        myStack.push(2);
-        myStack.push(3);
-        myStack.push(4);
-        myStack.display();
+        stack.push(1);
+        stack.push(2);
+        stack.push(3);
+        stack.push(4);
+        stack.display();
         System.out.println("--------------------------------------");
         popped = getPoppedItem();
         System.out.println(popped);
         System.out.println("--------------------------------------");
-        myStack.display();
+        stack.display();
         System.out.println("--------------------------------------");
         peeked = getPeekedItem();
         System.out.println(peeked); 
         System.out.println("--------------------------------------");
-        myStack.display();
+        stack.display();
         System.out.println("--------------------------------------");
-        System.out.println(myStack.isEmpty());
+        System.out.println(stack.isEmpty());
         System.out.println("--------------------------------------");
-        myStack.clear();
-        myStack.display();
+        stack.clear();
+        stack.display();
         System.out.println("--------------------------------------");
-        System.out.println(myStack.isEmpty());
+        System.out.println(stack.isEmpty());
     }
 
     private static String getPoppedItem() {
         String item;
         try {
-            Integer value = myStack.pop();
+            Integer value = stack.pop();
             item = Integer.toString(value);
         } catch (EmptyArrayException exception) {
             item = exception.getMessage();
@@ -50,7 +50,7 @@ class Main {
     private static String getPeekedItem(){
         String item;
         try {
-            Integer value = myStack.peek();
+            Integer value = stack.peek();
             item = Integer.toString(value);
         } catch (EmptyArrayException exception) {
             item = exception.getMessage();

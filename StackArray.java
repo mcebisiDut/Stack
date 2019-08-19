@@ -2,19 +2,19 @@ import java.io.Console;
 import java.util.*;
 
 public class StackArray<T> implements IStackArray<T> {
-    private T[] items;
+    private T[] numbers;
     private Integer size;
 
     public StackArray() {
         size = 0;
-        items = (T[]) new Object[10];
+        numbers = (T[]) new Object[10];
     }
 
-    public void push(T value) {
+    public void push(T number) {
         if (isFull()) {
-            items = Arrays.copyOf(items, 2 * items.length);
+            numbers = Arrays.copyOf(numbers, 2 * numbers.length);
         }
-        items[size] = value;
+        numbers[size] = number;
         size++;
     }
 
@@ -23,14 +23,14 @@ public class StackArray<T> implements IStackArray<T> {
             throw new EmptyArrayException("Cannot pop item on an empty array");
         }
         size--;
-        return items[size];
+        return numbers[size];
     }
 
     public T peek() throws EmptyArrayException{
         if (isEmpty()) {
             throw new EmptyArrayException("Cannot peek item on an empty array");
         }
-        return items[size - 1];
+        return numbers[size - 1];
     }
 
     public boolean isEmpty() {
@@ -38,7 +38,7 @@ public class StackArray<T> implements IStackArray<T> {
     }
 
     public boolean isFull() {
-        return (size == items.length);
+        return (size == numbers.length);
     }
 
     public void clear() {
@@ -47,7 +47,7 @@ public class StackArray<T> implements IStackArray<T> {
 
     public void display() {
         for (int index = 0; index < size; index++) {
-            System.out.println(items[index]);
+            System.out.println(numbers[index]);
         }
     }
 }

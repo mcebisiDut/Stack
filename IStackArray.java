@@ -1,5 +1,5 @@
 public interface IStackArray<T> {
-    void push(T value);
+    void push(T number);
     T pop() throws EmptyArrayException;
     T peek() throws EmptyArrayException;
     boolean isEmpty();
