@@ -20,7 +20,7 @@ public class StackArray<T> implements IStackArray<T> {
 
     public T pop() throws EmptyArrayException {
         if (isEmpty()) {
-            throw new EmptyArrayException("Cannot pop item on an empty array");
+            throw new EmptyArrayException();
         }
         size--;
         return numbers[size];
@@ -28,7 +28,7 @@ public class StackArray<T> implements IStackArray<T> {
 
     public T peek() throws EmptyArrayException{
         if (isEmpty()) {
-            throw new EmptyArrayException("Cannot peek item on an empty array");
+            throw new EmptyArrayException();
         }
         return numbers[size - 1];
     }

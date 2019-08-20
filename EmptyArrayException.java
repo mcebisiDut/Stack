@@ -1,7 +1,8 @@
 @SuppressWarnings("serial")
 public class EmptyArrayException extends Exception{
-
-    public EmptyArrayException(String message) {
+    static String message = "The array contains no elements!!";
+    
+    public EmptyArrayException() {
         super(message);
     }
 }
