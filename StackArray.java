@@ -7,12 +7,12 @@ public class StackArray<T> implements IStackArray<T> {
 
     public StackArray() {
         size = 0;
-        numbers = (T[]) new Object[10];
+        numbers = (T[]) new Object[2];
     }
 
     public void push(T number) {
         if (isFull()) {
-            numbers = Arrays.copyOf(numbers, 2 * numbers.length);
+            numbers = expandSize();
         }
         numbers[size] = number;
         size++;
@@ -51,5 +51,9 @@ public class StackArray<T> implements IStackArray<T> {
         for (int index = 0; index < size; index++) {
             System.out.println(numbers[index]);
         }
+    }
+
+    private T[] expandSize() {
+        return Arrays.copyOf(numbers, 2 * numbers.length);
     }
 }
