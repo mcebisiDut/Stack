@@ -23,13 +23,15 @@ public class StackArray<T> implements IStackArray<T> {
             throw new EmptyArrayException();
         }
         size--;
+
         return numbers[size];
     }
 
-    public T peek() throws EmptyArrayException{
+    public T peek() throws EmptyArrayException {
         if (isEmpty()) {
             throw new EmptyArrayException();
         }
+
         return numbers[size - 1];
     }
 
